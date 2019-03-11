@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e5a9a3-fe99-47c3-b32d-e8ef531d1b30" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reversi/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reversi/GameLogic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,10 +36,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+            <state relative-caret-position="385">
+              <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#253#268#0" expanded="true" />
+                <element signature="method#GameLogic#0;class#GameLogic#0" />
+                <element signature="method#setDIRECTIONS#0;class#GameLogic#0" />
+                <element signature="method#getOpposingPlayer#0;class#GameLogic#0" />
+                <element signature="method#numOfBlackPieces#0;class#GameLogic#0" />
+                <element signature="method#numOfBlackPieces#1;class#GameLogic#0" />
+                <element signature="method#getWinner#0;class#GameLogic#0" />
+                <element signature="method#isCellAvailable#0;class#GameLogic#0" />
+                <element signature="method#isOnBoard#0;class#GameLogic#0" />
+                <element signature="method#getFlippedItems#0;class#GameLogic#0" />
+                <element signature="e#4428#4443#0" expanded="true" />
+                <element signature="e#4998#5013#0" expanded="true" />
+                <element signature="e#5185#5194#0" expanded="true" />
+                <element signature="method#hasValidMoves#0;class#GameLogic#0" />
+                <element signature="method#flipTiles#0;class#GameLogic#0" />
+                <element signature="method#makeMove#0;class#GameLogic#0" />
+                <element signature="method#main#0;class#GameLogic#0" />
               </folding>
             </state>
           </provider>
@@ -102,7 +117,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552265142338" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552270683382" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -152,12 +167,12 @@
       <updated>1551913946599</updated>
       <workItem from="1551913951133" duration="3410000" />
       <workItem from="1552259386480" duration="2370000" />
-      <workItem from="1552261874972" duration="2748000" />
+      <workItem from="1552261874972" duration="7068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8528000" />
+    <option name="totallyTimeSpent" value="12848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -218,10 +233,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+        <state relative-caret-position="385">
+          <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#253#268#0" expanded="true" />
+            <element signature="method#GameLogic#0;class#GameLogic#0" />
+            <element signature="method#setDIRECTIONS#0;class#GameLogic#0" />
+            <element signature="method#getOpposingPlayer#0;class#GameLogic#0" />
+            <element signature="method#numOfBlackPieces#0;class#GameLogic#0" />
+            <element signature="method#numOfBlackPieces#1;class#GameLogic#0" />
+            <element signature="method#getWinner#0;class#GameLogic#0" />
+            <element signature="method#isCellAvailable#0;class#GameLogic#0" />
+            <element signature="method#isOnBoard#0;class#GameLogic#0" />
+            <element signature="method#getFlippedItems#0;class#GameLogic#0" />
+            <element signature="e#4428#4443#0" expanded="true" />
+            <element signature="e#4998#5013#0" expanded="true" />
+            <element signature="e#5185#5194#0" expanded="true" />
+            <element signature="method#hasValidMoves#0;class#GameLogic#0" />
+            <element signature="method#flipTiles#0;class#GameLogic#0" />
+            <element signature="method#makeMove#0;class#GameLogic#0" />
+            <element signature="method#main#0;class#GameLogic#0" />
           </folding>
         </state>
       </provider>

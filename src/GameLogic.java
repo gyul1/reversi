@@ -6,6 +6,7 @@ public class GameLogic {
     private String WHITE_PLAYER = "W";
     private String BLACK_PLAYER = "B";
     private String EMPTY_CELL   = "'";
+    private String CURRENT_PLAYER = "W";
     private List<List<Integer>> DIRECTIONS = new ArrayList<List<Integer>>();
     Board GaemeBoard;
 
@@ -91,10 +92,6 @@ public class GameLogic {
         return this.WHITE_PLAYER;
     }
 
-
-
-
-
     int numOfBlackPieces() {
         // returns the number of black pieces on the board
         int count = 0;
@@ -112,7 +109,6 @@ public class GameLogic {
         return count;
     }
 
-
     int numOfWhitePieces() {
         // returns the number of white pieces on the board
         int count = 0;
@@ -128,8 +124,6 @@ public class GameLogic {
         return count;
     }
 
-
-
     String getWinner() {
         // returns the winnter by comparing the number of black pieces vs white pieces
         int whiteCount = numOfWhitePieces();
@@ -141,18 +135,110 @@ public class GameLogic {
         return WHITE_PLAYER;
     }
 
-
-
-    Boolean isCellAvailable(int row, int col){
+    boolean isCellAvailable(int row, int col){
         // returns true if cell is empty
         return this.GaemeBoard.getBoard().get(row).get(col) == this.EMPTY_CELL;
     }
 
-
-    Boolean isOnBoard(int row, int col){
+    boolean isOnBoard(int row, int col){
         // checks to see if the row col combo is out of index or not
         return row >= 0 && col >= 0 && row < this.GaemeBoard.getRows() && col < this.GaemeBoard.getCols();
     }
+
+    List<List<Integer>> getFlippedItems(int row, int col, String player) {
+        // getting the board pieces that would need to be flipped if the move was made
+        List<List<Integer>> flipList = new ArrayList<List<Integer>>();
+        if(!isCellAvailable(row, col))
+        {
+            return flipList;
+        }
+        // opposing player
+        String oppPlayer = getOpposingPlayer(player);
+
+        for(int direction = 0; direction < this.DIRECTIONS.size(); direction++){
+            boolean foundOppPiece = false;
+            int currRow = row + DIRECTIONS.get(direction).get(0);
+            int currCol = col +  DIRECTIONS.get(direction).get(1);
+            List<List<Integer>> currentFlipList = new ArrayList<List<Integer>>();
+
+            while(isOnBoard(currRow, currCol)) {
+                if(this.GaemeBoard.getBoard().get(currRow).get(currCol) == oppPlayer) {
+                    foundOppPiece = true;
+                    List<Integer> toAdd = new ArrayList<Integer>();
+                    toAdd.add(currRow, currCol);
+                    currentFlipList.add(toAdd);
+                    currRow = currRow + DIRECTIONS.get(direction).get(0);
+                    currCol = currCol + DIRECTIONS.get(direction).get(1);
+                }
+                else if(this.GaemeBoard.getBoard().get(currRow).get(currCol) == player){
+                    if(foundOppPiece){
+                        flipList.addAll(currentFlipList);
+                    }
+                    break;
+                }
+
+                else{
+                    break;
+                }
+            }
+        }
+        return flipList;
+    }
+
+    boolean hasValidMoves(String player){
+        for(int row = 0; row < this.GaemeBoard.getRows(); row++){
+            for(int col = 0; col < this.GaemeBoard.getCols(); col ++){
+                List<List<Integer>> flipList = getFlippedItems(row, col, player);
+                if(flipList.size() > 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    boolean currentPlayerHasValidMove()
+    {
+        return hasValidMoves(this.CURRENT_PLAYER);
+    }
+
+    void flipTiles(List<List<Integer>> flipList){
+
+        List<List<String>> state = this.GaemeBoard.getBoard();
+
+        for(int i = 0; i < flipList.size(); i++) {
+            List<Integer> position = new ArrayList<>();
+            position.add(flipList.get(i).get(0));
+            position.add(flipList.get(i).get(1));
+            state.get(position.get(0)).set(position.get(1), this.CURRENT_PLAYER);
+        }
+
+        this.GaemeBoard.updateBoard(state);
+    }
+
+    void makeMove(int row, int col){
+        List<List<Integer>> flipList = getFlippedItems(row, col, this.CURRENT_PLAYER);
+        List<List<String>> state = this.GaemeBoard.getBoard();
+        state.get(row).set(col, this.CURRENT_PLAYER);
+        this.GaemeBoard.updateBoard(state);
+        flipTiles(flipList);
+
+        String oppPlayer = getOpposingPlayer(this.CURRENT_PLAYER);
+        if(hasValidMoves(oppPlayer)){
+            this.CURRENT_PLAYER = oppPlayer;
+        }
+
+    }
+
+    boolean isGameOver()
+    {
+        if(!hasValidMoves(this.CURRENT_PLAYER) && !hasValidMoves(getOpposingPlayer(this.CURRENT_PLAYER)))
+        {
+            return true;
+        }
+        return false;
+    }
+
 
 
 
