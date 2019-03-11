@@ -6,10 +6,28 @@ public class GameLogic {
     private String WHITE_PLAYER = "W";
     private String BLACK_PLAYER = "B";
     private String EMPTY_CELL   = "'";
-    private List<List<Integer>> DIRECTIONS;
+    private List<List<Integer>> DIRECTIONS = new ArrayList<List<Integer>>();
+    Board GaemeBoard;
 
-    void setDIRECTIONS()
-    {
+
+    public GameLogic(int r, int c) {
+        // constructor
+        setDIRECTIONS();
+        this.GaemeBoard = new Board(r, c);
+        List<List<String>> state = this.GaemeBoard.getBoard();
+        state.get((Integer) ((r / 2) - 1)).set((Integer) ((c / 2) - 1), WHITE_PLAYER);
+        state.get((Integer) ((r / 2))).set((Integer) ((c / 2) - 1), BLACK_PLAYER);
+        state.get((Integer) ((r / 2) - 1)).set((Integer) ((c / 2)), BLACK_PLAYER);
+        state.get((Integer) ((r / 2))).set((Integer) ((c / 2)), WHITE_PLAYER);
+
+        this.GaemeBoard.updateBoard(state);
+        //board.printBoard();
+    }
+
+
+
+    void setDIRECTIONS() {
+        // sets the directions
         List<Integer> northWest = new ArrayList<Integer>();
         List<Integer> north = new ArrayList<Integer>();
         List<Integer> northEast = new ArrayList<Integer>();
@@ -53,55 +71,97 @@ public class GameLogic {
         southEast.add(1);
 
         // add to DIRECTIONS
-        DIRECTIONS.add(northWest);
-        DIRECTIONS.add(north);
-        DIRECTIONS.add(northEast);
-        DIRECTIONS.add(west);
-        DIRECTIONS.add(east);
-        DIRECTIONS.add(southWest);
-        DIRECTIONS.add(south);
-        DIRECTIONS.add(southEast);
+        this.DIRECTIONS.add(northWest);
+        this.DIRECTIONS.add(north);
+        this.DIRECTIONS.add(northEast);
+        this.DIRECTIONS.add(west);
+        this.DIRECTIONS.add(east);
+        this.DIRECTIONS.add(southWest);
+        this.DIRECTIONS.add(south);
+        this.DIRECTIONS.add(southEast);
 
     }
 
     String getOpposingPlayer(String player) {
-        if(player == WHITE_PLAYER)
+        // returns the opposite player
+        if(player == this.WHITE_PLAYER)
         {
+            return this.BLACK_PLAYER;
+        }
+        return this.WHITE_PLAYER;
+    }
+
+
+
+
+
+    int numOfBlackPieces() {
+        // returns the number of black pieces on the board
+        int count = 0;
+        for(int rIndex = 0; rIndex < this.GaemeBoard.getRows(); rIndex++)
+        {
+            for(int cIndex = 0; cIndex < this.GaemeBoard.getCols(); cIndex++) {
+                if(this.GaemeBoard.getBoard().get(rIndex).get(cIndex) == "B")
+                {
+                    count += 1;
+                }
+            }
+
+        }
+
+        return count;
+    }
+
+
+    int numOfWhitePieces() {
+        // returns the number of white pieces on the board
+        int count = 0;
+        for(int rIndex = 0; rIndex < this.GaemeBoard.getRows(); rIndex++)
+        {
+            for(int cIndex = 0; cIndex < this.GaemeBoard.getCols(); cIndex++) {
+                if(this.GaemeBoard.getBoard().get(rIndex).get(cIndex) == "W")
+                {
+                    count += 1;
+                }
+            }
+        }
+        return count;
+    }
+
+
+
+    String getWinner() {
+        // returns the winnter by comparing the number of black pieces vs white pieces
+        int whiteCount = numOfWhitePieces();
+        int blackCount = numOfBlackPieces();
+
+        if(blackCount > whiteCount){
             return BLACK_PLAYER;
         }
         return WHITE_PLAYER;
     }
 
 
-    void createInitialState(int r, int c)
-    {
-        Board board = new Board(r, c);
-        List<List<String>> state = board.getBoard();
-        state.get((Integer)((r/2) - 1)).set((Integer)((c/2) -1), WHITE_PLAYER);
-        state.get((Integer)((r/2))).set((Integer)((c/2) -1), BLACK_PLAYER);
-        state.get((Integer)((r/2) - 1)).set((Integer)((c/2)), BLACK_PLAYER);
-        state.get((Integer)((r/2))).set((Integer)((c/2)), WHITE_PLAYER);
 
-        board.updateBoard(state);
-
-
-
-
-        board.printBoard();
-
-
-        
+    Boolean isCellAvailable(int row, int col){
+        // returns true if cell is empty
+        return this.GaemeBoard.getBoard().get(row).get(col) == this.EMPTY_CELL;
     }
+
+
+    Boolean isOnBoard(int row, int col){
+        // checks to see if the row col combo is out of index or not
+        return row >= 0 && col >= 0 && row < this.GaemeBoard.getRows() && col < this.GaemeBoard.getCols();
+    }
+
 
 
     public static void main(String[] args){
 
-        GameLogic game = new GameLogic();
-        game.createInitialState(8,8);
+        GameLogic game = new GameLogic(8,8);
+
+
     }
-
-
-
 
 
 }
