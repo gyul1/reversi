@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 
 public class GameLogic {
 
@@ -24,8 +26,6 @@ public class GameLogic {
         this.GaemeBoard.updateBoard(state);
         //board.printBoard();
     }
-
-
 
     void setDIRECTIONS() {
         // sets the directions
@@ -159,20 +159,28 @@ public class GameLogic {
             boolean foundOppPiece = false;
             int currRow = row + DIRECTIONS.get(direction).get(0);
             int currCol = col +  DIRECTIONS.get(direction).get(1);
+
             List<List<Integer>> currentFlipList = new ArrayList<List<Integer>>();
 
             while(isOnBoard(currRow, currCol)) {
+
+
                 if(this.GaemeBoard.getBoard().get(currRow).get(currCol) == oppPlayer) {
+
+
                     foundOppPiece = true;
                     List<Integer> toAdd = new ArrayList<Integer>();
-                    toAdd.add(currRow, currCol);
+                    toAdd.add(currRow);
+                    toAdd.add(currCol);
                     currentFlipList.add(toAdd);
                     currRow = currRow + DIRECTIONS.get(direction).get(0);
                     currCol = currCol + DIRECTIONS.get(direction).get(1);
                 }
                 else if(this.GaemeBoard.getBoard().get(currRow).get(currCol) == player){
                     if(foundOppPiece){
+
                         flipList.addAll(currentFlipList);
+
                     }
                     break;
                 }
@@ -228,10 +236,11 @@ public class GameLogic {
             this.CURRENT_PLAYER = oppPlayer;
         }
 
+        this.GaemeBoard.printBoard();
+
     }
 
-    boolean isGameOver()
-    {
+    boolean isGameOver() {
         if(!hasValidMoves(this.CURRENT_PLAYER) && !hasValidMoves(getOpposingPlayer(this.CURRENT_PLAYER)))
         {
             return true;
@@ -239,13 +248,41 @@ public class GameLogic {
         return false;
     }
 
+    List<Integer> getMove() {
+        this.GaemeBoard.printBoard();
+        List<Integer> res = new ArrayList<Integer>();
+        Scanner row = new Scanner(System.in);
+        Scanner col = new Scanner(System.in);
+
+        System.out.println("Enter row: ");
+        int row_val = row.nextInt();
+        System.out.println("Enter col: ");
+        int col_val = col.nextInt();
+
+        res.add(row_val-1);
+        res.add(col_val-1);
+
+        return res;
+    }
+
+
+
 
 
 
     public static void main(String[] args){
 
-        GameLogic game = new GameLogic(8,8);
-
+        GameLogic game = new GameLogic(4,4);
+        while(!game.isGameOver()){
+            List<Integer> move = game.getMove();
+            int row = move.get(0);
+            int col = move.get(1);
+            if(game.isOnBoard(row, col) && game.isCellAvailable(row, col))
+            {
+                game.makeMove(row, col);
+            }
+        }
+        System.out.println("the winner is " + game.getWinner());
 
     }
 

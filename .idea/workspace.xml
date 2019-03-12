@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e5a9a3-fe99-47c3-b32d-e8ef531d1b30" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLogic.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -16,13 +17,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#651#652#0" expanded="true" />
                 <element signature="e#678#679#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
                 <element signature="e#761#762#0" expanded="true" />
                 <element signature="e#849#850#0" expanded="true" />
                 <element signature="e#877#878#0" expanded="true" />
@@ -36,27 +36,34 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
+            <state relative-caret-position="19">
+              <caret line="180" selection-start-line="180" selection-end-line="180" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#253#268#0" expanded="true" />
                 <element signature="method#GameLogic#0;class#GameLogic#0" />
                 <element signature="method#setDIRECTIONS#0;class#GameLogic#0" />
-                <element signature="method#getOpposingPlayer#0;class#GameLogic#0" />
                 <element signature="method#numOfBlackPieces#0;class#GameLogic#0" />
-                <element signature="method#numOfBlackPieces#1;class#GameLogic#0" />
+                <element signature="method#numOfWhitePieces#0;class#GameLogic#0" />
                 <element signature="method#getWinner#0;class#GameLogic#0" />
-                <element signature="method#isCellAvailable#0;class#GameLogic#0" />
-                <element signature="method#isOnBoard#0;class#GameLogic#0" />
-                <element signature="method#getFlippedItems#0;class#GameLogic#0" />
-                <element signature="e#4428#4443#0" expanded="true" />
-                <element signature="e#4998#5013#0" expanded="true" />
-                <element signature="e#5185#5194#0" expanded="true" />
-                <element signature="method#hasValidMoves#0;class#GameLogic#0" />
+                <element signature="e#4577#4592#0" expanded="true" />
+                <element signature="e#5086#5101#0" expanded="true" />
+                <element signature="e#5338#5347#0" expanded="true" />
                 <element signature="method#flipTiles#0;class#GameLogic#0" />
                 <element signature="method#makeMove#0;class#GameLogic#0" />
-                <element signature="method#main#0;class#GameLogic#0" />
+                <element signature="e#7737#7746#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="430" selection-start-line="430" selection-end-line="430" />
+              <folding>
+                <element signature="e#15414#15415#0" expanded="true" />
+                <element signature="e#15459#15460#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,6 +101,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,14 +118,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552270683382" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552360452409" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -167,18 +174,18 @@
       <updated>1551913946599</updated>
       <workItem from="1551913951133" duration="3410000" />
       <workItem from="1552259386480" duration="2370000" />
-      <workItem from="1552261874972" duration="7068000" />
+      <workItem from="1552261874972" duration="7515000" />
+      <workItem from="1552338944554" duration="4407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12848000" />
+    <option name="totallyTimeSpent" value="17702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16910867" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17094018" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -187,7 +194,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.89183676" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -213,15 +220,25 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="430" selection-start-line="430" selection-end-line="430" />
+          <folding>
+            <element signature="e#15414#15415#0" expanded="true" />
+            <element signature="e#15459#15460#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#651#652#0" expanded="true" />
             <element signature="e#678#679#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
             <element signature="e#761#762#0" expanded="true" />
             <element signature="e#849#850#0" expanded="true" />
             <element signature="e#877#878#0" expanded="true" />
@@ -233,27 +250,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
+        <state relative-caret-position="19">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#253#268#0" expanded="true" />
             <element signature="method#GameLogic#0;class#GameLogic#0" />
             <element signature="method#setDIRECTIONS#0;class#GameLogic#0" />
-            <element signature="method#getOpposingPlayer#0;class#GameLogic#0" />
             <element signature="method#numOfBlackPieces#0;class#GameLogic#0" />
-            <element signature="method#numOfBlackPieces#1;class#GameLogic#0" />
+            <element signature="method#numOfWhitePieces#0;class#GameLogic#0" />
             <element signature="method#getWinner#0;class#GameLogic#0" />
-            <element signature="method#isCellAvailable#0;class#GameLogic#0" />
-            <element signature="method#isOnBoard#0;class#GameLogic#0" />
-            <element signature="method#getFlippedItems#0;class#GameLogic#0" />
-            <element signature="e#4428#4443#0" expanded="true" />
-            <element signature="e#4998#5013#0" expanded="true" />
-            <element signature="e#5185#5194#0" expanded="true" />
-            <element signature="method#hasValidMoves#0;class#GameLogic#0" />
+            <element signature="e#4577#4592#0" expanded="true" />
+            <element signature="e#5086#5101#0" expanded="true" />
+            <element signature="e#5338#5347#0" expanded="true" />
             <element signature="method#flipTiles#0;class#GameLogic#0" />
             <element signature="method#makeMove#0;class#GameLogic#0" />
-            <element signature="method#main#0;class#GameLogic#0" />
+            <element signature="e#7737#7746#0" expanded="true" />
           </folding>
         </state>
       </provider>
